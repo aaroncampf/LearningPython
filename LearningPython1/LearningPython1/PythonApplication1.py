@@ -1,16 +1,22 @@
-#class Company(object):
-#    self.
+﻿class Contact(object):
+    pass
 
-"""Documentation"""
 class Company(object):
-    def __init__():
-        self.Name = ""
+    """Represents a company"""
+    Name = ""
+    Address=""
+    City=""
+    State=""
+    Zip=""
+    Phone=""
+    Email=""
+    Contacts = [Contact]
 
+    def __new__(cls):
+        cls.Contacts.clear()
+        return cls
 
+AJP = Company()
+AJP.Contacts
 
-
-AJP = Cp
-AJP.Nam
-AJP. = "Bacon"
-
-print("hello")
+print(len(AJP.Contacts))
