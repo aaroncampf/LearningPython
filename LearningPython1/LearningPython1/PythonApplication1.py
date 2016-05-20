@@ -6,35 +6,28 @@ class Contact(object):
 
 class Company(object):
     """Represents a company"""
-    Name = ""
-    Address=""
-    City=""
-    State=""
-    Zip=""
-    Phone=""
-    Email=""
-    Contacts = [Contact]
 
     def __new__(cls):
-        cls.Contacts.clear()
+        cls.Name = ""
+        cls.Address = ""
+        cls.City = ""
+        cls.State = ""
+        cls.Zip = ""
+        cls.Phone = ""
+        cls.Email = ""
+        cls.Contacts = [Contact]
         return cls
 
+
 AJP = Company()
-AJP.Contacts
+AJP.Name = "AJP Northwest"
 
+Companies = []
+Companies.append(AJP)
 
-Companies = (
-    Company(),
-    Company()
-)
-
-
-
-
-with open('eggs.csv', 'wt') as csvfile:
-    spamwriter = csv.writer(csvfile, delimiter=' ', quotechar=',', quoting=csv.QUOTE_MINIMAL)
-    spamwriter.writerow(["Name", "Address", "City", "State", "Zip", "Phone", "Email"])
-    spamwriter.writerow([Companies[0]])
-    
-    #spamwriter.writerow(['Spam'] * 5 + ['Baked Beans'])
-    #spamwriter.writerow(['Spam', 'Lovely Spam', 'Wonderful Spam'])
+with open('names.csv', 'wt') as csvfile:
+    fieldnames = ["Name", "Address", "City", "State", "Zip", "Phone", "Email"]
+    writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+    writer.writeheader()
+    for x in Companies:
+        writer.writerow({"Name": x.Name, "Address": x.Address, "City": x.City, "State": x.State, "Zip": x.Zip, "Phone": x.Phone, "Email": x.Email})
