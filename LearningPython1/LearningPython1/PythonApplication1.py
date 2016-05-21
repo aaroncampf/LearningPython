@@ -25,6 +25,10 @@ AJP.Name = "AJP Northwest"
 Companies = []
 Companies.append(AJP)
 
+
+myList = [1, ..., 5]
+
+
 with open('names.csv', 'wt') as csvfile:
     fieldnames = ["Name", "Address", "City", "State", "Zip", "Phone", "Email"]
     writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
