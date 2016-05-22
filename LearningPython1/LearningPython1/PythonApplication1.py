@@ -1,37 +1,31 @@
 ﻿import csv
+from PolicyInfo import *
+
+Samples = []
+Samples.append(PolicyInfo())
 
 
-class Contact(object):
-    pass
+with open('data\FL_insurance_sample.csv', 'rt') as f:
+    reader = csv.reader(f)
+    for row in reader:
+        print(row)
+        Policy = PolicyInfo()
+        Policy.policyID = row[0]
+        Policy.statecode = row[1]
+        Policy.county = row[2]
+        Policy.eq_site_limit = row[3]
+        Policy.hu_site_limit = row[4]
+        Policy.fl_site_limit = row[5]
+        Policy.fr_site_limit = row[6]
+        Policy.tiv_2011 = row[7]
+        Policy.tiv_2012 = row[8]
+        Policy.eq_site_deductible = row[9]
+        Policy.hu_site_deductible = row[10]
+        Policy.fl_site_deductible = row[11]
+        Policy.fr_site_deductible = row[12]
+        Policy.point_latitude = row[13]
+        Policy.point_longitude = row[14]
+        Policy.line = row[15]
+        Policy.construction = row[16]
+        Policy.point_granularity = row[17]
 
-class Company(object):
-    """Represents a company"""
-
-    def __new__(cls):
-        cls.Name = ""
-        cls.Address = ""
-        cls.City = ""
-        cls.State = ""
-        cls.Zip = ""
-        cls.Phone = ""
-        cls.Email = ""
-        cls.Contacts = [Contact]
-        return cls
-
-
-AJP = Company()
-AJP.Name = "AJP Northwest"
-
-Companies = []
-Companies.append(AJP)
-
-
-myList = [1, ..., 5]
-
-
-with open('names.csv', 'wt') as csvfile:
-    fieldnames = ["Name", "Address", "City", "State", "Zip", "Phone", "Email"]
-    writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
-    writer.writeheader()
-    for x in Companies:
-        writer.writerow({"Name": x.Name, "Address": x.Address, "City": x.City, "State": x.State, "Zip": x.Zip, "Phone": x.Phone, "Email": x.Email})

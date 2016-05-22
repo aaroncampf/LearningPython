@@ -6,8 +6,7 @@
     <ProjectGuid>4f2c889c-1e8e-44a4-99f0-c3d67430c822</ProjectGuid>
     <ProjectHome>.</ProjectHome>
     <StartupFile>PythonApplication1.py</StartupFile>
-    <SearchPath>
-    </SearchPath>
+    <SearchPath>Data\;Practice\</SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
     <Name>LearningPython1</Name>
@@ -22,7 +21,20 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Data\PolicyInfo.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Practice\module1.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="PythonApplication1.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Data\" />
+    <Folder Include="Practice\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Data\FL_insurance_sample.csv" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
