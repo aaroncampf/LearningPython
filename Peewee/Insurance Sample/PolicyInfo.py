@@ -1,5 +1,8 @@
 ﻿from peewee import *
 
+db = SqliteDatabase('Insurance Sample\InsuranceData.db')
+
+
 #class PolicyInfo(object):
 #    """description of class"""
 
@@ -47,8 +50,10 @@ class PolicyInfo(Model):
     construction = CharField(),
     point_granularity = IntegerField()
 
+    class Meta:
+        database = db # this model uses the "people.db" database
+
     def ImportData():
-        db = SqliteDatabase('Insurance Sample\InsuranceData.db')
 
         with open('FL_insurance_sample.csv', 'rt') as f:
             reader = csv.reader(f)
