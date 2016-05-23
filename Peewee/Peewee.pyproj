@@ -21,7 +21,14 @@
     <PtvsTargetsFile>$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets</PtvsTargetsFile>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Insurance Sample\PolicyInfo.py" />
     <Compile Include="Peewee.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Insurance Sample\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Insurance Sample\FL_insurance_sample.csv" />
   </ItemGroup>
   <Import Project="$(PtvsTargetsFile)" Condition="Exists($(PtvsTargetsFile))" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" Condition="!Exists($(PtvsTargetsFile))" />
