@@ -1,4 +1,5 @@
-﻿from peewee import *
+﻿import csv
+from peewee import *
 
 db = SqliteDatabase('Insurance Sample\InsuranceData.db')
 
@@ -53,11 +54,14 @@ class PolicyInfo(Model):
     class Meta:
         database = db # this model uses the "people.db" database
 
+    @staticmethod
     def ImportData():
-
-        with open('FL_insurance_sample.csv', 'rt') as f:
+        with open('Insurance Sample\FL_insurance_sample.csv', 'rt') as f:
             reader = csv.reader(f)
             for row in reader:
+                if row[0] == 'policyID':
+                    continue
+
                 print(row)
                 Policy = PolicyInfo()
                 Policy.policyID = row[0]
@@ -78,5 +82,9 @@ class PolicyInfo(Model):
                 Policy.line = row[15]
                 Policy.construction = row[16]
                 Policy.point_granularity = row[17]
-                Policies.append(Policy)
+                #Policies.append(Policy)
                 Policy.save()
+
+
+
+PolicyInfo.ImportData()
