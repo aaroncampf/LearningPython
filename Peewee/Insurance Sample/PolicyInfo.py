@@ -4,52 +4,26 @@ from builtins import staticmethod
 
 db = SqliteDatabase('Insurance Sample\InsuranceData.db')
 
-
-#class PolicyInfo(object):
-#    """description of class"""
-
-
-#    def __new__(cls):
-#        cls.policyID = 0,
-#        cls.statecode = "",
-#        cls.county = "",
-#        cls.eq_site_limit = 0,
-#        cls.hu_site_limit = 0,
-#        cls.fl_site_limit = 0,
-#        cls.fr_site_limit = 0,
-#        cls.tiv_2011 = 0
-#        cls.tiv_2012 = 0,
-#        cls.eq_site_deductible = 0,
-#        cls.hu_site_deductible = 0,
-#        cls.fl_site_deductible = 0,
-#        cls.fr_site_deductible = 0,
-#        cls.point_latitude = 0,
-#        cls.point_longitude = 0,
-#        cls.line = "",
-#        cls.construction = "",
-#        cls.point_granularity = 0
-#        return cls
-
 class PolicyInfo(Model):
     """description of class"""
 
-    policyID = IntegerField(),
-    statecode = CharField(),
-    county = CharField(),
-    eq_site_limit = IntegerField(),
-    hu_site_limit = IntegerField(),
-    fl_site_limit = IntegerField(),
-    fr_site_limit = IntegerField(),
+    policyID = IntegerField()
+    statecode = CharField()
+    county = CharField()
+    eq_site_limit = IntegerField()
+    hu_site_limit = IntegerField()
+    fl_site_limit = IntegerField()
+    fr_site_limit = IntegerField()
     tiv_2011 = IntegerField()
-    tiv_2012 = IntegerField(),
-    eq_site_deductible = IntegerField(),
-    hu_site_deductible = IntegerField(),
-    fl_site_deductible = IntegerField(),
-    fr_site_deductible = IntegerField(),
-    point_latitude = IntegerField(),
-    point_longitude = IntegerField(),
-    line = CharField(),
-    construction = CharField(),
+    tiv_2012 = IntegerField()
+    eq_site_deductible = IntegerField()
+    hu_site_deductible = IntegerField()
+    fl_site_deductible = IntegerField()
+    fr_site_deductible = IntegerField()
+    point_latitude = IntegerField()
+    point_longitude = IntegerField()
+    line = CharField()
+    construction = CharField()
     point_granularity = IntegerField()
 
     class Meta:
