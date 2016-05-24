@@ -66,6 +66,9 @@ class PolicyInfo(Model):
 #PolicyInfo.ImportData()
 
 Test = PolicyInfo()
-Test = PolicyInfo.select().first()
+#Test = PolicyInfo.select().where().first()
+Test = PolicyInfo.select().where(PolicyInfo.statecode == "FL")
+
+
 
 print(Test)
