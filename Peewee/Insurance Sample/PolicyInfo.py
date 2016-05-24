@@ -2,6 +2,8 @@
 from peewee import *
 from builtins import staticmethod
 
+
+
 db = SqliteDatabase('Insurance Sample\InsuranceData.db')
 
 class PolicyInfo(Model):
@@ -10,18 +12,18 @@ class PolicyInfo(Model):
     policyID = IntegerField()
     statecode = CharField()
     county = CharField()
-    eq_site_limit = IntegerField()
-    hu_site_limit = IntegerField()
-    fl_site_limit = IntegerField()
-    fr_site_limit = IntegerField()
-    tiv_2011 = IntegerField()
-    tiv_2012 = IntegerField()
-    eq_site_deductible = IntegerField()
-    hu_site_deductible = IntegerField()
-    fl_site_deductible = IntegerField()
-    fr_site_deductible = IntegerField()
-    point_latitude = IntegerField()
-    point_longitude = IntegerField()
+    eq_site_limit = FloatField()
+    hu_site_limit = FloatField()
+    fl_site_limit = FloatField()
+    fr_site_limit = FloatField()
+    tiv_2011 = FloatField()
+    tiv_2012 = FloatField()
+    eq_site_deductible = FloatField()
+    hu_site_deductible = FloatField()
+    fl_site_deductible = FloatField()
+    fr_site_deductible = FloatField()
+    point_latitude = FloatField()
+    point_longitude = FloatField()
     line = CharField()
     construction = CharField()
     point_granularity = IntegerField()
@@ -60,4 +62,10 @@ class PolicyInfo(Model):
                 #Policies.append(Policy)
                 Policy.save()
 
-PolicyInfo.ImportData()
+#db.create_tables([PolicyInfo])
+#PolicyInfo.ImportData()
+
+Test = PolicyInfo()
+Test = PolicyInfo.select().first()
+
+print(Test)
