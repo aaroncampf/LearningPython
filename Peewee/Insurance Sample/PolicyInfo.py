@@ -1,5 +1,6 @@
 ﻿import csv
 from peewee import *
+from builtins import staticmethod
 
 db = SqliteDatabase('Insurance Sample\InsuranceData.db')
 
@@ -84,7 +85,5 @@ class PolicyInfo(Model):
                 Policy.point_granularity = row[17]
                 #Policies.append(Policy)
                 Policy.save()
-
-
 
 PolicyInfo.ImportData()
