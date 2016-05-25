@@ -12,18 +12,20 @@ class Person(models.Model):
     last_name = models.CharField(max_length=30)
     Address = models.CharField(max_length=30)
 
+class Contact(models.Model):
+    Name = models.CharField(max_length=30)
+    Company = models.ForeignKey(
+        'Company',
+        on_delete=models.CASCADE,
+    )
 
+class Company(models.Model):
+    """Represents a company"""
 
-def Seed():
-    Test = QuerySet
-    Test = Person.objects
-    for x in Test.all():
-        pass
-
-    Aaron = Person()
-    Aaron.first_name = "Aaron"
-    Aaron.last_name = "Campf"
-    Aaron.save()
-
-
-#Seed()
+    Name = models.CharField(max_length=30)
+    Address = models.CharField(max_length=30)
+    City = models.CharField(max_length=30)
+    State = models.CharField(max_length=30)
+    Zip = models.CharField(max_length=30)
+    Phone = models.CharField(max_length=30)
+    Email = models.CharField(max_length=30)

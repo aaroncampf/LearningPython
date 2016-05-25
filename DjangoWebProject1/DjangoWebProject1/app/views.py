@@ -6,7 +6,7 @@ from django.shortcuts import render
 from django.http import HttpRequest
 from django.template import RequestContext
 from datetime import datetime
-from app.models import Person
+from app.models import *
 from django.db.models.query import QuerySet
 
 def home(request):
@@ -59,14 +59,10 @@ def Test(request, id):
     #call_command('makemigrations', 'myapp', verbosity=3, interactive=False)
     #call_command('migrate', 'myapp', verbosity=3, interactive=False)
 
-    Aaron = Person()
-    Aaron.first_name = "Aaron"
     Test = QuerySet
-    Test = Person.objects
-    for x in Test.all():
-        pass
-
-
+    Test = Company.objects  
+    Record = Company()
+    Record = Test.get(id = id)
     return render(
         request,
         'app/Test.html',
@@ -75,6 +71,6 @@ def Test(request, id):
             'title':'About',
             'message':'Your application description page.',
             'year':datetime.now().year,
-            'Person': Aaron
+            'Person': Record
         })
     )
