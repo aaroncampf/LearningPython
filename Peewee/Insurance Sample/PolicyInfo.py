@@ -1,7 +1,7 @@
 ﻿import csv
 from peewee import *
 from builtins import staticmethod
-
+from builtins import property
 
 
 db = SqliteDatabase('Insurance Sample\InsuranceData.db')
@@ -65,10 +65,11 @@ class PolicyInfo(Model):
 #db.create_tables([PolicyInfo])
 #PolicyInfo.ImportData()
 
-Test = PolicyInfo()
-#Test = PolicyInfo.select().where().first()
-Test = PolicyInfo.select().where(PolicyInfo.statecode == "FL")
 
+#Test = PolicyInfo()
+#Test = PolicyInfo.select().where().first()
+Test = SelectQuery
+Test = PolicyInfo.select().where(PolicyInfo.statecode == "FL").order_by(PolicyInfo.statecode)
 
 
 print(Test)
