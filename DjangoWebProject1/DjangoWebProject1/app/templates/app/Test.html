@@ -9,6 +9,14 @@
 <h3>{{ Person.Name }}</h3>
 <h3>{{ Person.Address }}</h3>
 
+{% if IsCustomerIsValid %}
+        Customer is valid
+    {% else %} 
+        Customer is not valid
+{% endif %}
+
+{% autoescape off %}{{ Test }}{% endautoescape %} 
+
 <address>
     One Microsoft Way<br />
     Redmond, WA 98052-6399<br />

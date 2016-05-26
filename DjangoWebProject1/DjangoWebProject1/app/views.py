@@ -63,6 +63,7 @@ def Test(request, id):
     Test = Company.objects  
     Record = Company()
     Record = Test.get(id = id)
+
     return render(
         request,
         'app/Test.html',
@@ -71,6 +72,8 @@ def Test(request, id):
             'title':'About',
             'message':'Your application description page.',
             'year':datetime.now().year,
-            'Person': Record
+            'Person': Record,
+            'IsCustomerIsValid': False,
+            'Test' : '<h3>Hello World</h3>' 
         })
     )
