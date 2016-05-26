@@ -7,12 +7,14 @@ def Seed():
     Test = QuerySet
     Test = Person.objects
     for x in Test.all():      
+        assert isinstance(x, Person) #Required for AutoComplete
         #x.delete()
         #x.save() 
         pass
 
     Test = Company.objects
-    for x in Test.all():      
+    for x in Test.all():
+        assert isinstance(x, Company) #Required for AutoComplete 
         #x.delete()
         #x.save() 
         pass

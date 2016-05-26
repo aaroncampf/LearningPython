@@ -51,16 +51,19 @@ def about(request):
     )
 
 def Test(request, id):
-    """Renders the about page."""
+    """
+    :type id: int
+    """
     assert isinstance(request, HttpRequest)
-
+    #assert isinstance(request, int)
     #from django.core.management import call_command
     #call_command('migrate')
     #call_command('makemigrations', 'myapp', verbosity=3, interactive=False)
     #call_command('migrate', 'myapp', verbosity=3, interactive=False)
 
     Test = QuerySet
-    Test = Company.objects  
+    Test = Company.objects
+
     Record = Company()
     Record = Test.get(id = id)
 
