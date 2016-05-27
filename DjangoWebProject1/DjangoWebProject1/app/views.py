@@ -80,3 +80,9 @@ def Test(request, id):
             'Test' : '<h3>Hello World</h3>' 
         })
     )
+
+def Bacon(request):
+    """
+    :type id: int
+    """
+    assert isinstance(request, HttpRequest)

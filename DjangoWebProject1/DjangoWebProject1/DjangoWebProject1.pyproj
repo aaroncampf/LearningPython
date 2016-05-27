@@ -50,6 +50,7 @@
     <Folder Include="DjangoWebProject1\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app\templates\app\HelloWorld.html" />
     <Content Include="app\templates\app\Test.html" />
     <Content Include="requirements.txt" />
     <Content Include="db.sqlite3" />
